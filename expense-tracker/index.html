@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+
+        <div id="login-form" class="form">
+            <h2>Login</h2>
+            <input type="email" id="login-email" placeholder="Email" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button onclick="login()">Login</button>
+            <p>Don't have an account? <span onclick="showRegister()">Register here</span></p>
+        </div>
+
+
+        <div id="register-form" class="form hidden">
+            <h2>Register</h2>
+            <input type="text" id="register-username" placeholder="Username" required>
+            <input type="email" id="register-email" placeholder="Email" required>
+            <input type="password" id="register-password" placeholder="Password" required>
+            <button onclick="register()">Register</button>
+            <p>Already have an account? <span onclick="showLogin()">Login here</span></p>
+        </div>
+
+
+        <div id="dashboard" class="hidden">
+            <h2>Expense Tracker</h2>
+            <button onclick="logout()">Logout</button>
+            <form id="expense-form" onsubmit="addExpense(event)">
+                <input type="text" id="expense-title" placeholder="Title" required>
+                <input type="number" id="expense-amount" placeholder="Amount" required>
+                <input type="text" id="expense-category" placeholder="Category" required>
+                <button type="submit">Add Expense</button>
+            </form>
+            <h3>Expenses</h3>
+            <ul id="expense-list"></ul>
+        </div>
+    </div>
+    <script src="index.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
